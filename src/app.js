@@ -1,27 +1,15 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 8080;
-const getQuiz = require("./services/getQuiz");
+const quiz = require("./routes/quiz_route");
+const funfacts = require("./routes/funfacts_route");
 
-// Quiz
-app.get('/quiz', async (req, res) => {
-    try {
-        const quiz = await getQuiz();
-        const result = {
-            message: "success",
-            quiz: quiz
-        } 
-        res.status(200).json(result);       
-    } catch (error) {
-        res.status(error.code).statusMessage(error.message);
-    }
+app.get("/", (req, res) => {
+  res.send("API is running");
 });
+app.use(quiz);
+app.use(funfacts);
 
-// Fun Fact
-app.get('/funfact', (req, res) => {
-    res.send('Fun Fact');
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on port ${process.env.PORT}`);
 });
