@@ -4,7 +4,7 @@ async function getFunfacts() {
   try {
     const db = new Firestore({
       projectId: process.env.PROJECT_ID,
-      keyFilename: process.env.SERVICE_KEY,
+      keyFilename: process.env.PATH_SERVICE_KEY,
       databaseId: process.env.DATABASE_ID,
     });
     const funfactsCollection = await db.collection("funfact").get();
