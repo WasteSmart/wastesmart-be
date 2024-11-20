@@ -2,7 +2,7 @@ const express = require("express");
 const funfacts = express.Router();
 const getFunfacts = require("../services/getFunfacts");
 
-funfacts.get("/funfact", async (req, res) => {
+funfacts.get("/funfacts", async (req, res) => {
   try {
     const funfacts = await getFunfacts();
     const result = {
