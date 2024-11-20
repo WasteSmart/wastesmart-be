@@ -48,3 +48,19 @@
           ...
       ]
   }
+
+## Tips
+- Endpoint: /tips
+- Method: GET
+- Response Code: 200 OK
+- Response Body
+  ```
+  {
+    "success": true,
+    "tips": {
+        "sisa_makanan": "Kumpulkan sisa makanan serta sampah tumbuhan di tempat kompos, lalu tambahkan sedikit tanah atau kompos yang sudah jadi untuk mempercepat proses dekomposisi",
+        "plastik": "Pisahkan sampah plastik dari sampah lainnya. Setelah terkumpul, bawa ke pengepul sampah atau tempat pengumpulan sampah daur ulang",
+        "logam": "Pisahkan sampah logam dari sampah lainnya. Setelah terkumpul, bawa ke pengepul sampah atau tempat pengumpulan sampah daur ulang",
+        ...
+      }
+  }
