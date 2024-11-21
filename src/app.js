@@ -1,10 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const quiz = require("./routes/quiz_route");
 const funfacts = require("./routes/funfacts_route");
 const tips = require("./routes/tips_route")
 
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("API is running");
 });
