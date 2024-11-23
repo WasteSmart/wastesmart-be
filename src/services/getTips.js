@@ -15,7 +15,6 @@ async function getTips() {
     return tips;
   } catch (error) {
     console.error("Error getting documents", error);
-    throw error;
   }
 }
 

@@ -15,7 +15,6 @@ async function getQuiz() {
     return quiz;
   } catch (error) {
     console.error("Error getting documents", error);
-    throw error;
   }
 }
 

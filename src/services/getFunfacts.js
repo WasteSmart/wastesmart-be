@@ -15,7 +15,6 @@ async function getFunfacts() {
     return funfacts;
   } catch (error) {
     console.error("Error getting documents", error);
-    throw error;
   }
 }
 
