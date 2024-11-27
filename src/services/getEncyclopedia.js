@@ -1,12 +1,7 @@
-const { Firestore } = require("@google-cloud/firestore");
+const db = require("../config/firestore")
 
 async function getEncyclopedia() {
   try {
-    const db = new Firestore({
-      projectId: process.env.PROJECT_ID,
-      keyFilename: process.env.PATH_SERVICE_KEY,
-      databaseId: process.env.DATABASE_ID,
-    });
     const encyclopediaCollection = await db.collection("encyclopedia").get();
     let encyclopedia;
     encyclopediaCollection.forEach((doc) => {
