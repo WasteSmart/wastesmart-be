@@ -1,55 +1,130 @@
 # WasteSmart API Documentation
 
+## Predicts
+
+- Endpoint: /predicts
+- Method: POST
+- Request Body: form-data
+-       key: image file (jpg, png, etc.)
+- Response Code: 200 OK
+- Response Body
+  ```
+  {
+    "success": true,
+    "result": [
+        {
+            "id": 1,
+            "name": "metal",
+            "percentage": 67
+        },
+        {
+            "id": 2,
+            "name": "glass",
+            "percentage": 32
+        },
+        {
+            "id": 3,
+            "name": "shoes",
+            "percentage": 0
+        }
+    ]
+  }
+  ```
+
+## Encyclopedia
+
+- Endpoint: /encyclopedia
+- Method: GET
+- Response Code: 200 OK
+- Response Body
+
+  ```
+  {
+    "success": true,
+    "waste": {
+        "general_description": "Sampah adalah...",
+        "image_url": "https://storage.googleapis.com/..."
+    }
+  }
+
+  ```
+
+- Endpoint: /encyclopedia/organik
+            | /encyclopedia/anorganik
+            | /encyclopedia/b3
+- Method: GET
+- Response Code: 200 OK
+- Response Body
+  ```
+  {
+    "success": true,
+    "type_of_waste": {
+        "id": 1,
+        "title": "Sampah Organik",
+        "examples": [
+            {
+                "id": 11,
+                "description": "Sampah sisa makanan...",
+                "image_url": "https://storage.googleapis.com/...",
+                "title": "Sisa makanan & tumbuhan"
+            }
+        ],
+        "description": "Sampah organik adalah...",
+        "image_url": "https://storage.googleapis.com/...",
+        "how_to_manage": "Pengelolaan sampah organik..."
+    }
+  }
+  ```
+
 ## Quiz
+
 - Endpoint: /quiz
 - Method: GET
 - Response Code: 200 OK
 - Response Body
   ```
     {
-        "success": true,
-        "quiz": [
-            {
-                "question": "Proses mengolah kembali sampah atau produk bekas pakai menjadi produk baru yang bermanfaat merupakan definisi dari ?",
-                "options": [
-                    "Daur ulang",
-                    "Pengolahan Sampah",
-                    "Bank Sampah",
-                    "Pelestarian Lingkungan"
-                ],
-                "answer": "Daur ulang"
-            },
-            {
-                "question": "Mengapa daur ulang sampah plastik sangat penting dilakukan ?",
-                "options": [
-                    "Karena plastik mudah terurai di alam",
-                    "Karena plastik dapat digunakan berulang kali tanpa batas",
-                    "Karena plastik dapat mencemari lingkungan jika tidak dikelola dengan baik dan membutuhkan waktu yang sangat lama untuk terurai",
-                    "Karena produksi plastik membutuhkan biaya yang sangat murah"
-                ],
-                "answer": "Karena plastik dapat mencemari lingkungan jika tidak dikelola dengan baik dan membutuhkan waktu yang sangat lama untuk terurai"
-            },
-            ...
+    "success": true,
+    "quiz": [
+        {
+            "id": 11,
+            "question": "Apa yang...",
+            "options": [
+                {
+                    "id": 111,
+                    "text": "Sampah..."
+                },
+            ],
+            "answer": {
+                "id": 113,
+                "text": "Sampah yang..."
+            }
+        },
+        ...
         ]
   }
+  ```
 
 ## Funfacts
+
 - Endpoint: /funfacts
 - Method: GET
 - Response Code: 200 OK
 - Response Body
   ```
   {
-      "success": true,
-      "funfacts": [
-          "Indonesia adalah penghasil sampah plastik terbesar kedua di dunia setelah Tiongkok.",
-          "Banyak kota di Indonesia masih menggunakan tempat pembuangan akhir (TPA) yang tidak memenuhi standar lingkungan.",
-          "Fasilitas Daur Ulang di Indonesia yang Belum Merata",
+    "success": true,
+    "funfacts": [
+        "Indonesia adalah...",
+        "Banyak kota...",
+        "Fasilitas Daur...",
           ...
       ]
   }
+  ```
 
 ## Tips
+
 - Endpoint: /tips
 - Method: GET
 - Response Code: 200 OK
@@ -58,9 +133,10 @@
   {
     "success": true,
     "tips": {
-        "sisa_makanan": "Kumpulkan sisa makanan serta sampah tumbuhan di tempat kompos, lalu tambahkan sedikit tanah atau kompos yang sudah jadi untuk mempercepat proses dekomposisi",
-        "plastik": "Pisahkan sampah plastik dari sampah lainnya. Setelah terkumpul, bawa ke pengepul sampah atau tempat pengumpulan sampah daur ulang",
-        "logam": "Pisahkan sampah logam dari sampah lainnya. Setelah terkumpul, bawa ke pengepul sampah atau tempat pengumpulan sampah daur ulang",
+        "sisa_makanan": "Kumpulkan...",
+        "plastik": "Pisahkan...",
+        "logam": "Pisahkan sampah...",
         ...
       }
   }
+  ```
