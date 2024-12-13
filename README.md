@@ -176,6 +176,13 @@ This application has a main feature, namely Waste Type Detection: Allows users t
       }
   }
   ```
+
+## Tech & Tools
+<p align="left"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/220px-Node.js_logo.svg.png" width="75"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Expressjs.png/220px-Expressjs.png" width="75"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/220px-Visual_Studio_Code_1.35_icon.svg.png" width="75"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Postman_%28software%29.png/512px-Postman_%28software%29.png" width="75"/> </p>
+
+## Deployment
+<p align="left"> <img src="https://cdn.qwiklabs.com/assets/gcp_cloud-e3a77215f0b8bfa9b3f611c0d2208c7e8708ed31.svg" width="75"/> </p>
+
 ## Installation
 ### 1. Clone repository:
   ```
